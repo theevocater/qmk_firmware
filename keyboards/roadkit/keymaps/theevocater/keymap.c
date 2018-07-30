@@ -15,10 +15,7 @@ enum custom_keycodes {
   NFOCUS = SAFE_RANGE,
 };
 
-
-// Macro name shortcuts
-#define NUMPAD M(_NP)
-#define LAYER1 M(_L1)
+#define LAYER1 MO(_L1)
 
 // Fillers to make layering more clear
 #define _______ KC_TRNS
@@ -33,16 +30,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*KC_KP_0, KC_KP_DOT, TG(_L1), KC_BSPC*/
   /*),*/
   [_L0] = LAYOUT_ortho_4x4( /* LAYER 0 */
-    NFOCUS, _______, _______,  KC_VOLU, \
-    _______, _______, _______,  KC_VOLD, \
-    KC_MPRV, KC_MPLY, KC_MNXT,  KC_MUTE, \
-    _______, _______, _______,  _______
+    NFOCUS, _______, _______,  _______, \
+    KC_LEFT, KC_DOWN, KC_UP,   _______, \
+    KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, \
+    KC_VOLD, KC_MUTE, KC_VOLU, LAYER1
   ),
   [_L1] = LAYOUT_ortho_4x4( /* LAYER 1 */
+    RESET,   _______, _______,  _______, \
     _______, _______, _______,  _______, \
     _______, _______, _______,  _______, \
-    _______, _______, _______,  _______, \
-    _______, _______, _______,  _______
+    KC_SLEP, _______, _______,  _______
   )
 };
 
